@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:10:29 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/14 18:10:31 by ralanes          ###   ########.fr       */
+/*   Created: 2023/09/14 18:51:28 by ralanes           #+#    #+#             */
+/*   Updated: 2023/09/14 18:51:30 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 //#include <stdio.h>
-int ft_isalpha(int c)
+int ft_isascii( int c)
 {
-    if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    else 
+    if(c >= 0 || c <= 127)
+        return(1);
+    else
         return(0);
 }
 /*int main(void)
 {
-    char c;
-    c = 'A';
-    printf("%d la letra c", ft_isalpha(c));
+    int c;
+    c = ' ';
+    printf("%d is ascii", ft_isascii(c));
 }*/

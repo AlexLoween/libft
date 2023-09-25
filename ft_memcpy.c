@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:10:29 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/14 18:10:31 by ralanes          ###   ########.fr       */
+/*   Created: 2023/09/21 15:18:18 by ralanes           #+#    #+#             */
+/*   Updated: 2023/09/21 15:18:30 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <stdio.h>
-int ft_isalpha(int c)
+#include<string.h>
+
+void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-    if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    else 
-        return(0);
+    size_t c;
+    char *d;
+    char *s;
+
+    c = 0;
+    d = (char *)dst;
+    s = (char *)src;
+
+    while(c < n)
+    {
+        d[c] = s[c];
+        c++;
+    }
+return(dst);
 }
-/*int main(void)
-{
-    char c;
-    c = 'A';
-    printf("%d la letra c", ft_isalpha(c));
-}*/

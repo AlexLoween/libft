@@ -1,23 +1,26 @@
-#include<stdio.h>
-//esta funcion nos dice si al pasarle una variable tipo int se trata de un 
-//caracter de tipo numerico
-int ft_isdigit (int c)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/14 18:40:12 by ralanes           #+#    #+#             */
+/*   Updated: 2023/09/14 18:40:13 by ralanes          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
+//#include <stdio.h>
+int ft_isdigit(int c)
 {
-if( c >= '0' || c <= '9')
-    return (1);
-else
-    return (0);
+    if(c >= 48 && c <= 57)
+        return(1);
+    else
+        return(0);
 }
-
-/*int main (void)
+/*int main(void)
 {
-int c;
-c = 7;
-
-    if (ft_isdigit(c))
-    {
-        printf("%d es digito numerico \n", c);
-    }
-    else 
-    printf("%d no es un digito numerico\n", c);
+    int c;
+    c = '.';
+    printf("%d is ", ft_isdigit(c));
 }*/

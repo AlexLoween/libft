@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:10:29 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/14 18:10:31 by ralanes          ###   ########.fr       */
+/*   Created: 2023/09/14 18:40:31 by ralanes           #+#    #+#             */
+/*   Updated: 2023/09/14 18:40:34 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <stdio.h>
-int ft_isalpha(int c)
+
+int ft_isalnum(int c)
 {
-    if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    else 
-        return(0);
+return((ft_isalpha(c)|| ft_isdigit(c)));
 }
 /*int main(void)
 {
-    char c;
-    c = 'A';
-    printf("%d la letra c", ft_isalpha(c));
+    unsigned char c;
+    c = 'c';
+if(ft_isalnum(c))
+    printf("%d is alphanumer", c);
+else
+    printf("%d no is alphanumer", c);
 }*/

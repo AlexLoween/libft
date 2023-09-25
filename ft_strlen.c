@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:10:29 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/14 18:10:31 by ralanes          ###   ########.fr       */
+/*   Created: 2023/09/14 20:05:20 by ralanes           #+#    #+#             */
+/*   Updated: 2023/09/14 20:05:21 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <stdio.h>
-int ft_isalpha(int c)
+#include<stdio.h>
+#include<string.h>
+
+size_t ft_strlen(const char *s)
 {
-    if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    else 
-        return(0);
+    int i;
+    i = 0;
+    while(s[i] != '\0')
+        i++;
+    return i;
 }
 /*int main(void)
 {
-    char c;
-    c = 'A';
-    printf("%d la letra c", ft_isalpha(c));
+        printf("%ld the long is \n",ft_strlen("hola"));
+
+    
+return(0);
 }*/

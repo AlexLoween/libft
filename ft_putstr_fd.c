@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:51:28 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/26 20:15:02 by ralanes          ###   ########.fr       */
+/*   Created: 2023/10/20 20:23:46 by ralanes           #+#    #+#             */
+/*   Updated: 2023/10/20 20:40:54 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_isascii( int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c >= 0 || c <= 127)
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i] && fd >= 0)
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
-/*int main(void)
-{
-    int c;
-    c = ' ';
-    printf("%d is ascii", ft_isascii(c));
-}*/

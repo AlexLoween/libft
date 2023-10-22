@@ -6,26 +6,26 @@
 /*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:32:23 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/21 15:32:26 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/09/27 19:16:34 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include<stdio.h>
+
 char	*ft_strchr(const char *s, int c)
 {
 	char	a;
 
-	a = c; //se iguala la variable al valor de sus parametro de entrada
-	while (*s) //mientras el puntero a la cadena exista
+	a = c;
+	while (*s)
 	{
-		if (*s == a) //mientras el puntero a la cadena a buscar sea igual a caracter a buscar
+		if (*s == a)
 		{
-			return ((char *) s); // devuelvo un char puntero a la coincidencia.
+			return ((char *)s);
 		}
-		s++; //contador para poder recorer el string
+		s++;
 	}
-	if (a == '\0') //mietntras el caracter sea igual a NULL
-		return ((char *) s); // devuelvo un char puntero a la coincidencia
+	if (a == '\0')
+		return ((char *) s);
 	return (0);
 }
 /*int main(void)

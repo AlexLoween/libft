@@ -3,42 +3,82 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ralanes <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 22:05:59 by ralanes           #+#    #+#              #
-#    Updated: 2023/09/22 22:06:01 by ralanes          ###   ########.fr        #
+#    Updated: 2023/10/22 21:21:28 by alexlowen        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+SRCS =			ft_atoi.c \
+				ft_bzero.c \
+				ft_calloc.c \
+				ft_isalnum.c \
+				ft_isalpha.c \
+				ft_isascii.c \
+				ft_isdigit.c \
+				ft_isprint.c \
+				ft_itoa.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_memset.c \
+				ft_putchar_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_putstr_fd.c \
+				ft_strchr.c \
+				ft_strdup.c \
+				ft_striteri.c \
+				ft_strjoin.c \
+				ft_strlcat.c \
+				ft_strlcpy.c \
+				ft_strlen.c \
+				ft_strncmp.c \
+				ft_strnstr.c \
+				ft_strrchr.c \
+				ft_strtrim.c \
+				ft_substr.c \
+				ft_tolower.c \
+				ft_toupper.c \
+				
+
+BONUS_SRC =		ft_lstnew_bonus.c \
+				ft_lstadd_front_bonus.c \
+				ft_lstsize_bonus.c \
+				ft_lstlast_bonus.c \
+				ft_lstadd_back_bonus.c \
+				ft_lstdelone_bonus.c \
+				ft_lstclear_bonus.c \
+				ft_lstiter_bonus.c \
+				
+				
+OBJS = $(SRCS:.c=.o)
+B_OBJS = $(BONUS_SRC:.c=.o)
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-SRC =   ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c\
-		ft_memset.c ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c
-	
-OBJS = $(SRC:.c=.o)
-BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstlast.c ft_lstsize.c \
-		ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c ft_lstclear.c \
-		ft_lstmap.c 
-BONUS_OBJS = $(BONUS:.c=.o)
-INCLUDE = libft.h
-$(NAME):$(OBJS) $(INCLUDE)
-	@ar rsc $(NAME) $(OBJS)
+
+CC_FLAGS = -Wall -Wextra -Werror
+RM_RF = rm -rf
+NAME = libft
+LIBNAME = libft.a
+S_NAME = .simple
+B_NAME = .bonus
+
 all: $(NAME)
-%.o : %.c
-	@$(CC) $(CCFLAGS) -c -o $@ $<
+$(NAME): $(S_NAME)
+$(S_NAME):	$(OBJS)
+	ar crs $(LIBNAME) $(OBJS)
+	@rm -f $(B_NAME)
+	touch $(S_NAME)
+$(B_NAME):	$(B_OBJS)
+	ar crs $(LIBNAME) $(B_OBJS)
+	@rm -f $(S_NAME)
+	@touch $(B_NAME)
+bonus: $(B_NAME)
 clean:
-	@rm -f $(OBJS) $(BONUS_OBJS)
-fclean:	clean
-	@rm -f $(NAME)
+	$(RM_RF) $(OBJS) $(B_OBJS)
+fclean: clean
+	$(RM_RF) $(OBJS) $(LIBNAME) $(S_NAME) $(B_NAME)
 re: fclean all
-bonus: $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
-.PHONY: all clean fclean re bonus
-
-
-
-
-
-
-
+.PHONY: clean fclean all bonus re

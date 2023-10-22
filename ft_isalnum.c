@@ -6,14 +6,14 @@
 /*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:40:31 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/14 18:40:34 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/09/26 20:09:38 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-return((ft_isalpha(c)|| ft_isdigit(c)));
+	return ((ft_isalpha(c) || ft_isdigit(c)));
 }
 /*int main(void)
 {

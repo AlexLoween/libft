@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:51:28 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/26 20:15:02 by ralanes          ###   ########.fr       */
+/*   Created: 2023/10/22 15:56:17 by alexlowen         #+#    #+#             */
+/*   Updated: 2023/10/22 16:46:49 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_isascii( int c)
+t_list *ft_lstnew(void *tema)
 {
-	if (c >= 0 || c <= 127)
-		return (1);
-	else
-		return (0);
+    t_list *node;
+    node = malloc(sizeof(t_list));
+    if(!node)
+        return(0);
+    node->content=tema;
+    node->next = 0;
+return(node);
 }
 /*int main(void)
 {
-    int c;
-    c = ' ';
-    printf("%d is ascii", ft_isascii(c));
+    t_list *i;
+
+    i = ft_lstnew("alex");
+    printf("%s", i->content);
 }*/

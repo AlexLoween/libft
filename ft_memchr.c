@@ -6,12 +6,12 @@
 /*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:31:19 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/21 15:31:20 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/09/27 20:55:52 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <stdio.h>
-void	*ft_memchr(const void *s, int c, size_t n) //Se recibe una cadena, un carácter para encontrar y el tamaño del buffer
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
 	unsigned char	*str;
@@ -20,18 +20,11 @@ void	*ft_memchr(const void *s, int c, size_t n) //Se recibe una cadena, un cará
 	i = 0;
 	str = (unsigned char *)s;
 	to_find = (unsigned char)c;
-	while (i < n) 				//mientas i menor que el tamaño del buffer. 
+	while (i < n)
 	{
-		if (str[i] == to_find) 		//si recorriendo str[i] encuentro la coincidencia que busco
-			return (&str[i]); 	//devuelvo la dirrecion de la posicion de la coincidencia 
-		i++; 				//contador para poder recorrer el str hasta que se encuentre la coincidencia que busco
+		if (str[i] == to_find)
+			return (&str[i]);
+		i++;
 	}
-	return (0); 				//si no hay una coincidencia devuelve NULL
-}
-
-int main (void)
-{
-	
-
-
+	return (0);
 }

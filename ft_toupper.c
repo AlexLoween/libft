@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_touper.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:34:15 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/27 20:43:15 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/11/03 20:24:19 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_toupper(int c)
@@ -19,5 +20,5 @@ int	ft_toupper(int c)
 }
 /*int main(void)
 {
-	char c;
+	printf("%c", ft_toupper('C'));
 }*/

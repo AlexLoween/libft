@@ -6,22 +6,24 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:56:17 by alexlowen         #+#    #+#             */
-/*   Updated: 2023/10/22 16:46:49 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/10/30 20:04:06 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *tema)
+t_list	*ft_lstnew(void *tema)
 {
-    t_list *node;
-    node = malloc(sizeof(t_list));
-    if(!node)
-        return(0);
-    node->content=tema;
-    node->next = 0;
-return(node);
+	t_list	*node;
+
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (0);
+	node->content = tema;
+	node->next = 0;
+	return (node);
 }
+
 /*int main(void)
 {
     t_list *i;

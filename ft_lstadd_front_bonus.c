@@ -6,22 +6,22 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 16:47:28 by alexlowen         #+#    #+#             */
-/*   Updated: 2023/10/22 21:12:56 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/10/30 20:12:17 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    if(*lst == 0)
-    {
-        new->next = 0;
-        *lst= new;
-    }
-    else
-        new->next = *lst;
-        *lst = new;
+	if (*lst == 0)
+	{
+		new->next = 0;
+		*lst = new;
+	}
+	else
+		new->next = *lst;
+	*lst = new;
 }
 /*void imprimirlista(t_list *lista)
 {

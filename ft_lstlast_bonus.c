@@ -6,16 +6,17 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 18:18:58 by alexlowen         #+#    #+#             */
-/*   Updated: 2023/10/22 18:39:44 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/10/30 20:04:40 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-t_list  *ft_lstlast(t_list *list)
+
+t_list	*ft_lstlast(t_list *list)
 {
-    while( list != 0 && list->next != 0)
-        list = list->next;
-    return (list);
+	while (list != 0 && list->next != 0)
+		list = list->next;
+	return (list);
 }
 /*int main (void)
 {

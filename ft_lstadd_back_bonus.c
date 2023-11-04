@@ -6,21 +6,21 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 18:40:40 by alexlowen         #+#    #+#             */
-/*   Updated: 2023/10/22 21:12:51 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/10/30 20:13:21 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list *last_node;
-    
-    last_node =ft_lstlast(*lst);
-    if(last_node != 0)
-        last_node->next = new;
-    else 
-        *lst=new;
+	t_list	*last_node;
+
+	last_node = ft_lstlast(*lst);
+	if (last_node != 0)
+		last_node->next = new;
+	else
+		*lst = new;
 }
 /*void imprimirlista(t_list *lista)
 {

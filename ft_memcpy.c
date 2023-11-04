@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:18:18 by ralanes           #+#    #+#             */
-/*   Updated: 2023/10/22 17:24:19 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/03 18:24:33 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,31 @@
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	size_t	c;
+	size_t	i;
 	char	*d;
 	char	*s;
 
-	c = 0;
+	i = 0;
 	d = (char *)dst;
 	s = (char *)src;
-	while (c < n)
+	while (i < n)
 	{
-		d[c] = s[c];
-		c++;
+		d[i] = s[i];
+		i++;
 	}
 	return (dst);
 }
+/*int main (void)
+{
+	char s[] = "hola";
+	char d[] = "adios";
+	char d2[] = "adios";
+	size_t n = 3;
+
+	printf("\n antes de copiar mia %s",d);
+	ft_memcpy(d,s,n);
+	printf("\n despues de copiar mia %s",d);
+	printf("\n antes de copiar original %s",d2);
+	memcpy(d2,s,n);
+	printf("\n despues de copiar orignal %s",d2);
+}*/

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:32:14 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/27 19:07:15 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/11/03 17:03:50 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memset(void *ptr, int x, size_t n)
@@ -27,10 +28,12 @@ void	*ft_memset(void *ptr, int x, size_t n)
 }
 /*int main (void)
 {
-    char buffer[15];
+    char buffer[5];
 
-    ft_memset(buffer, '7', sizeof buffer);
-    printf("contenido del buffer \n %s ", buffer);
+    ft_memset(buffer, 'x', sizeof buffer); 
+    printf("contenido del buffer mio \n%s", buffer);
+    memset(buffer, 'x', sizeof buffer); 
+    printf("\ncontenido del buffer original\n%s", buffer);
 }*/
 /*convertimos un puntero void en un puntero char. 
 Luego, utilizo un bucle while para recorrer la memoria, 

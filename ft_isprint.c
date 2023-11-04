@@ -6,10 +6,11 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 20:05:07 by ralanes           #+#    #+#             */
-/*   Updated: 2023/10/22 21:44:14 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/10/30 20:14:35 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

@@ -6,24 +6,24 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:01:32 by alexlowen         #+#    #+#             */
-/*   Updated: 2023/10/22 21:12:59 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/10/30 20:11:11 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    t_list *save;
+	t_list	*save;
 
-    if(!lst)
-        return ;
-    while(*lst != 0)
-    {
-        save = (*lst)->next;
-        ft_lstdelone(*lst, del);
-        *lst = save;
-    }
+	if (!lst)
+		return ;
+	while (*lst != 0)
+	{
+		save = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = save;
+	}
 }
 /*void imprimirlista(t_list *lista)
 {

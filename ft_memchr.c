@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:31:19 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/27 20:55:52 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/11/03 21:30:41 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
@@ -28,3 +29,17 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
+/*int main(void)
+{
+	char str[] = "Hola mundx";
+	char find = 'x';
+	size_t n = 9;
+	char *result;
+	result = ft_memchr(str, find, n);
+
+	if( result != NULL){
+		printf("letra buscada%c posicion %ld", find, result - str);}
+	else{
+		printf("no se ha encontrado coincidencia %c",find );}
+return(0);
+}*/

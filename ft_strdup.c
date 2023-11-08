@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 20:20:01 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/26 20:20:07 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:11:22 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,18 @@ char	*ft_strdup(const char *s1)
 	ptr[size] = '\0';
 	return (ptr);
 }
+/*int main() {
+    const char *original_str = "hey";
+    const char *original_str2 = "hey";
+    char *dupl_str = ft_strdup(original_str);
+    char *dupl_str2 = strdup(original_str2);
+    if (dupl_str != NULL) {
+        printf("mio Original: %s\n", original_str);
+        printf("mio Duplicado: %s\n", dupl_str);
+        printf("Original: %s\n", original_str2);
+        printf("Duplicado: %s\n", dupl_str2);
+    } else {
+        printf("Error al duplicar la cadena.\n");
+    }
+    return 0;
+}*/

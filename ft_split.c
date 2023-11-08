@@ -3,88 +3,97 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:12:32 by ralanes           #+#    #+#             */
-/*   Updated: 2023/10/30 19:59:26 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/11/05 10:26:20 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdlib.h>
-#include<stdio.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	contador_palabra(const char *str, char delimitador)
+static int	ft_count_words(char const *s, char c)
 {
+	int	cword;
 	int	i;
-	int	total_palabra;
 
+	cword = 0;
 	i = 0;
-	total_palabra = 1;
-	if (!str)
-		return (0);
-	while (str[i])
+	while (s[i])
 	{
-		if (str[i] == delimitador)
-			total_palabra++;
-		i++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			cword++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	return (total_palabra);
+	return (cword);
 }
 
-char	*ft_poner_palabra(int letra, const char *str, char c)
+static char	*ft_place_word(char const *s, char c)
 {
-	char	*reserva_palabra;
-	int		total_letras;
+	char	*word;
 	int		i;
+	int		len;
 
-	i = 0;
-	while (str[i] && str[i] != c)
-		i++;
-	total_letras = i + 1;
-	reserva_palabra = (char *)malloc(sizeof(char) * total_letras);
-	if (!reserva_palabra)
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	word = (char *)malloc(sizeof(char) * (len +1));
+	if (!word)
 		return (NULL);
 	i = 0;
-	while (i < total_letras)
+	while (i < len)
 	{
-		if (str[i] != c)
+		word[i] = s[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+static char	*ft_cpy_str(int i, char const *s, char c, char **res)
+{
+	res[i] = ft_place_word(s, c);
+	if (!res[i])
+	{
+		while (i > 0)
 		{
-			reserva_palabra[i] = str[i];
+			i--;
+			free(res[i]);
 		}
-		i++;
+		free(res);
+		return (NULL);
 	}
-	reserva_palabra[i] = '\0';
-	return (reserva_palabra);
+	return (res[i]);
 }
 
-char	**ft_split(const char *str, char c)
+char	**ft_split(char const *s, char c)
 {
-	int		total_palabras;
-	char	**reserva;
-	int		palabra;
+	int		nb_words;
 	int		i;
+	char	**res;
 
-	palabra = 0;
-	i = 0;
-	total_palabras = contador_palabra(str, c);
-	reserva = (char **)malloc(sizeof(char *) * (total_palabras + 1));
-	if (!reserva)
+	if (!s)
 		return (NULL);
-	palabra = 0;
-	while (palabra < total_palabras)
+	i = 0;
+	nb_words = ft_count_words(s, c);
+	res = (char **)malloc(sizeof(char *) * (nb_words + 1));
+	if (!res)
+		return (NULL);
+	while (i < nb_words)
 	{
-		while (str[i] == c)
-			i++;
-		if (str[i] != '\0')
-			reserva[palabra] = ft_poner_palabra(palabra, &str[i], c);
-		while (str[i] && str[i] != c)
-			i++;
-		palabra++;
+		while (*s == c)
+			s++;
+		if (*s != '\0')
+			res[i] = ft_cpy_str(i, s, c, res);
+		while (*s && *s != c)
+			s++;
+		i++;
 	}
-	reserva[palabra] = 0;
-	return (reserva);
+	res[i] = 0;
+	return (res);
 }
 
 /*int main(void)

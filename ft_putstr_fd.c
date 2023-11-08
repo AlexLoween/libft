@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:23:46 by ralanes           #+#    #+#             */
-/*   Updated: 2023/10/20 20:40:54 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/11/06 12:19:57 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,12 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+/*int main()
+{
+    char *message = "¡Hey, como estas!";
+    int file_descriptor = 1;
+
+    ft_putstr_fd(message, file_descriptor);
+
+    return 0;
+}*/

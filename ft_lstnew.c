@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 18:10:29 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/26 20:13:38 by ralanes          ###   ########.fr       */
+/*   Created: 2023/10/22 15:56:17 by alexlowen         #+#    #+#             */
+/*   Updated: 2023/10/30 20:04:06 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+t_list	*ft_lstnew(void *tema)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
+	t_list	*node;
+
+	node = malloc(sizeof(t_list));
+	if (!node)
 		return (0);
+	node->content = tema;
+	node->next = 0;
+	return (node);
 }
+
 /*int main(void)
 {
-    char c;
-    c = 'A';
-    printf("%d la letra c", ft_isalpha(c));
+    t_list *i;
+
+    i = ft_lstnew("alex");
+    printf("%s", i->content);
 }*/

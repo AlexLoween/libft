@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 18:03:04 by ralanes           #+#    #+#             */
-/*   Updated: 2023/09/26 18:03:05 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/11/06 11:52:03 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
     int *arr;
     int n = 5;
-   
+
     arr = (int *)calloc(n, sizeof(int));
 
     if (arr == NULL) {

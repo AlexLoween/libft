@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:32:40 by ralanes           #+#    #+#             */
-/*   Updated: 2023/11/03 20:20:00 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/04 17:48:59 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 		return (src_len);
 	if (dstsize <= dst_len)
 		return (src_len + dstsize);
-	else 
+	else
 		src_len += dst_len;
 	while (src[i] != '\0' && dst_len < dstsize - 1)
 	{

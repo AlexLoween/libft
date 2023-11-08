@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 17:53:22 by ralanes           #+#    #+#             */
-/*   Updated: 2023/10/22 17:23:56 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/06 20:54:24 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,36 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	char	*nuevo_str;
+	char	*subs;
+	size_t	j;
+	size_t	str_len;
 
-	i = start;
-	if (start > ft_strlen(s))
-	{
-		start = 0;
-	}
-	if (len > ft_strlen(s))
-	{
-		len = 0;
-	}
-	nuevo_str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!nuevo_str)
+	if (s == NULL)
 		return (NULL);
+	str_len = ft_strlen(s);
+	if (start > str_len)
+		start = str_len;
+	if (len > str_len - start)
+		len = str_len - start;
+	subs = malloc(sizeof(char) * (len + 1));
+	if (subs == NULL)
+		return (NULL);
+	j = start;
 	i = 0;
-	while (i < len)
+	while (i < len && (ft_strlen(s)) > start)
 	{
-		nuevo_str[i] = s[i + start];
+		subs[i] = s[j];
 		i++;
+		j++;
 	}
-	nuevo_str[i] = '\0';
-	return (nuevo_str);
+	subs[i] = '\0';
+	return (subs);
 }
+/*int	main(void)
+{
+	char	*str;
 
-/* int main() {
-    const char *cadena_original = "Ejem";
-    unsigned int inicio = 1; // Índice de inicio
-    size_t longitud =10 ;    // Longitud de la subcadena
-
-    // Llamada a la función ft_substr
-    char *subcadena = ft_substr(cadena_original, inicio, longitud);
-
-    if (subcadena) {
-        printf("Subcadena: %s\n", subcadena);
-        free(subcadena); // Liberar la memoria asignada por ft_substr
-    } else {
-        printf("Índice o longitud fuera de rango o error de memoria.\n");
-    }
-
-    return 0;
+	str = ft_substr("Hola", 2, 3);
+	printf("%s\n", str);
+	return (0);
 }*/

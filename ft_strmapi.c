@@ -3,31 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ralanes <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:12:19 by ralanes           #+#    #+#             */
-/*   Updated: 2023/10/30 19:12:20 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/11/06 13:20:45 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t		i;
-	char		*temp;
+	int		i;
+	char	*str;
 
-	if (!s || !f)
+	if (!s)
 		return (NULL);
-	temp = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!temp)
+	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
-	while (i < (ft_strlen((char *)s)))
+	while (s[i] != '\0')
 	{
-		temp[i] = f(i, s[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	temp[i] = '\0';
-	return (temp);
+	str[i] = '\0';
+	return (str);
 }
+/*int main() {
+    const char *input_string = "Hey que tal?!";
+    char *result = ft_strmapi(input_string, 'C');
+
+    if (result != NULL) {
+        printf("Cadena original: %s\n", input_string);
+        printf("Cadena convertida: %s\n", result);
+    } else {
+        printf("No se pudo realizar la conversión.\n");
+    }
+    return 0;
+}*/

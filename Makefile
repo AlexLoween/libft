@@ -6,11 +6,11 @@
 #    By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 22:05:59 by ralanes           #+#    #+#              #
-#    Updated: 2023/10/22 21:21:28 by alexlowen        ###   ########.fr        #
+#    Updated: 2023/11/08 18:29:39 by alexlowen        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =			ft_atoi.c \
+SRCS =		ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
 				ft_isalnum.c \
@@ -42,16 +42,19 @@ SRCS =			ft_atoi.c \
 				ft_substr.c \
 				ft_tolower.c \
 				ft_toupper.c \
+				ft_split.c \
+				ft_strmapi.c \
+				
 				
 
-BONUS_SRC =		ft_lstnew_bonus.c \
-				ft_lstadd_front_bonus.c \
-				ft_lstsize_bonus.c \
-				ft_lstlast_bonus.c \
-				ft_lstadd_back_bonus.c \
-				ft_lstdelone_bonus.c \
-				ft_lstclear_bonus.c \
-				ft_lstiter_bonus.c \
+BONUS_SRC =		ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
 				
 				
 OBJS = $(SRCS:.c=.o)
@@ -60,25 +63,24 @@ CC = gcc
 
 CC_FLAGS = -Wall -Wextra -Werror
 RM_RF = rm -rf
-NAME = libft
-LIBNAME = libft.a
+NAME = libft.a
 S_NAME = .simple
 B_NAME = .bonus
 
 all: $(NAME)
 $(NAME): $(S_NAME)
 $(S_NAME):	$(OBJS)
-	ar crs $(LIBNAME) $(OBJS)
+	ar crs $(NAME) $(OBJS)
 	@rm -f $(B_NAME)
 	touch $(S_NAME)
 $(B_NAME):	$(B_OBJS)
-	ar crs $(LIBNAME) $(B_OBJS)
+	ar crs $(NAME) $(B_OBJS)
 	@rm -f $(S_NAME)
 	@touch $(B_NAME)
 bonus: $(B_NAME)
 clean:
 	$(RM_RF) $(OBJS) $(B_OBJS)
 fclean: clean
-	$(RM_RF) $(OBJS) $(LIBNAME) $(S_NAME) $(B_NAME)
+	$(RM_RF) $(OBJS) $(NAME) $(S_NAME) $(B_NAME)
 re: fclean all
 .PHONY: clean fclean all bonus re

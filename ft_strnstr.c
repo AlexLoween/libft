@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:33:24 by ralanes           #+#    #+#             */
-/*   Updated: 2023/11/04 13:15:54 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/06 13:21:33 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,24 @@ char	*ft_strnstr(const char *stack, const char *needle, size_t len)
 	}
 	return (0);
 }
-/*int main (void)
-{
-	char s1[]= 
-	char s2[]=
+/*int main() {
+    const char *stack = "hey mira !";
+    const char *needle = "mira";
+    size_t len = 15;
+
+    char *result = ft_strnstr(stack, needle, len);
+    char *result2 = strnstr(stack, needle, len);
+
+    if (result != NULL) {
+        printf("Subcadena mia encontrada: %ld\n", result - stack);
+    } else {
+        printf("Subcadena mia no encontrada\n");
+    }
+    if (result != NULL) {
+        printf("Subcadena originaposición: %ld\n", result2 - stack);
+    } else {
+        printf("Subcadena original no encontrada\n");
+    }
+
+    return 0;
 }*/

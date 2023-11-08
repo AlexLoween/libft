@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 15:32:23 by ralanes           #+#    #+#             */
-/*   Updated: 2023/11/04 17:48:06 by ralanes          ###   ########.fr       */
+/*   Created: 2023/10/22 17:55:32 by alexlowen         #+#    #+#             */
+/*   Updated: 2023/10/30 20:01:11 by ralanes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_lstsize(t_list *lst)
 {
-	char	finded;
+	int	len;
 
-	finded = c;
-	while (*s)
+	len = 0;
+	while (lst != 0)
 	{
-		if (*s == finded)
-		{
-			return ((char *)s);
-		}
-		s++;
+		lst = lst->next;
+		len++;
 	}
-	if (finded == '\0')
-		return ((char *) s);
-	return (0);
+	return (len);
 }
 /*int main(void)
 {
-	char str[] = "Hola mundo";
-	char find = 'o';
-	char *result;
-	result = ft_strchr(str, find);
-
-	if( result != NULL){
-		printf("letra buscada%c posicion %ld", find, result - str);}
-	else{
-		printf("no se ha encontrado coincidencia %c",find );}
-return(0);
+    t_list *milista;
+    t_list *nodo1;
+    t_list *nodo2;
+    int contador = 0;
+    milista= 0;
+    nodo1= ft_lstnew("dog");
+    nodo2= ft_lstnew("horse");
+    ft_lstadd_front(&milista, nodo1);
+    ft_lstadd_front(&milista, nodo2);
+    imprimirlista(milista);
+    contador=ft_lstsize(milista);
+    printf("nodos:%d\n", contador);
 }*/

@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:12:19 by ralanes           #+#    #+#             */
-/*   Updated: 2023/11/06 13:20:45 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/09 20:24:38 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*int main() {
-    const char *input_string = "Hey que tal?!";
-    char *result = ft_strmapi(input_string, 'C');
+/*	char f(unsigned int i, char str)
+	{
+		return(str-32);
+	}
+int main() {
+    const char s[]= "alex";
+    printf("resultado : %s\n", s);
+    char *result = ft_strmapi(s, f);
+    printf("resultado mapeado : %s\n", result);
 
-    if (result != NULL) {
-        printf("Cadena original: %s\n", input_string);
-        printf("Cadena convertida: %s\n", result);
-    } else {
-        printf("No se pudo realizar la conversión.\n");
-    }
-    return 0;
+	return 0;
 }*/

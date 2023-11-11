@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:12:32 by ralanes           #+#    #+#             */
-/*   Updated: 2023/11/05 10:26:20 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/09 19:55:52 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,27 +72,27 @@ static char	*ft_cpy_str(int i, char const *s, char c, char **res)
 char	**ft_split(char const *s, char c)
 {
 	int		nb_words;
-	int		i;
+	int		word;
 	char	**res;
 
 	if (!s)
 		return (NULL);
-	i = 0;
+	word = 0;
 	nb_words = ft_count_words(s, c);
 	res = (char **)malloc(sizeof(char *) * (nb_words + 1));
 	if (!res)
 		return (NULL);
-	while (i < nb_words)
+	while (word < nb_words)
 	{
 		while (*s == c)
 			s++;
 		if (*s != '\0')
-			res[i] = ft_cpy_str(i, s, c, res);
+			res[word] = ft_cpy_str(word, s, c, res);
 		while (*s && *s != c)
 			s++;
-		i++;
+		word++;
 	}
-	res[i] = 0;
+	res[word] = 0;
 	return (res);
 }
 

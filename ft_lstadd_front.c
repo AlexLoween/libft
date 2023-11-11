@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 16:47:28 by alexlowen         #+#    #+#             */
-/*   Updated: 2023/10/30 20:12:17 by ralanes          ###   ########.fr       */
+/*   Updated: 2023/11/09 21:30:33 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (*lst == 0)
+	if (!*lst)
 	{
-		new->next = 0;
+		new->next = NULL;
 		*lst = new;
 	}
 	else

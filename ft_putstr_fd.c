@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:23:46 by ralanes           #+#    #+#             */
-/*   Updated: 2023/11/06 12:19:57 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/11 23:59:26 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,19 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	while (s[i] && fd >= 0)
 	{
-		ft_putchar_fd(s[i], fd);
+		write(fd, &s[i], 1);
 		i++;
 	}
 }
-/*int main()
+/*int main() 
 {
-    char *message = "¡Hey, como estas!";
-    int file_descriptor = 1;
-
-    ft_putstr_fd(message, file_descriptor);
-
+	int fd = open("salidas.txt", O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	char *str = "paco lo co";
+	if (fd != -1) 
+	{
+        ft_putstr_fd(str, fd);
+    }
+    close(fd);
+	printf("%d",fd);
     return 0;
 }*/

@@ -6,7 +6,7 @@
 #    By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/22 22:05:59 by ralanes           #+#    #+#              #
-#    Updated: 2023/11/08 18:29:39 by alexlowen        ###   ########.fr        #
+#    Updated: 2023/11/09 18:46:29 by alexlowen        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,10 +70,12 @@ B_NAME = .bonus
 all: $(NAME)
 $(NAME): $(S_NAME)
 $(S_NAME):	$(OBJS)
+	$(CC) $(CC_FLAGS) -c $(SRCS)
 	ar crs $(NAME) $(OBJS)
 	@rm -f $(B_NAME)
 	touch $(S_NAME)
 $(B_NAME):	$(B_OBJS)
+	$(CC) $(CC_FLAGS) -c $(BONUS_SRC)
 	ar crs $(NAME) $(B_OBJS)
 	@rm -f $(S_NAME)
 	@touch $(B_NAME)

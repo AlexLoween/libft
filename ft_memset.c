@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:32:14 by ralanes           #+#    #+#             */
-/*   Updated: 2023/11/03 17:03:50 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/12 18:04:43 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ void	*ft_memset(void *ptr, int x, size_t n)
     printf("\ncontenido del buffer original\n%s", buffer);
 }*/
 /*convertimos un puntero void en un puntero char. 
-Luego, utilizo un bucle while para recorrer la memoria, 
-estableciendo el valor c en cada posición de memoria. 
-El bucle se ejecuta mientras la longitud len sea mayor que 0, 
 asegurando que se configuren todos los bytes excepto el 
 byte nulo al final de la memoria. Finalmente, la función 
-devuelve el puntero original b.*/
+devuelve el puntero original ptr.*/

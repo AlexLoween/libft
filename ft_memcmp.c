@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:31:44 by ralanes           #+#    #+#             */
-/*   Updated: 2023/11/03 21:50:12 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/12 17:49:49 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 }
 /*int main (void)
 {
-	char s1[] = "z";
-	char s2[] = "a";
-	size_t n = 4;
-	printf("%d\n",ft_memcmp(s1,s2,n));
-	printf("%d\n",memcmp(s1,s2,n));
+	char s1[] = "hb";
+	char s2[] = "ha";
+	size_t n = 3;
+	printf("mio %d\n",ft_memcmp(s1,s2,n));
+	printf("original %d\n",memcmp(s1,s2,n));
 }*/

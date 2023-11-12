@@ -6,7 +6,7 @@
 /*   By: alexlowen <alexlowen@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 15:18:56 by ralanes           #+#    #+#             */
-/*   Updated: 2023/11/03 18:35:21 by alexlowen        ###   ########.fr       */
+/*   Updated: 2023/11/12 17:58:15 by alexlowen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 }
 /*int main (void)
 {
-	char s[] = "hola";
-	char d[] = "adios";
-	char d2[] = "adios";
-	size_t n = 3;
+	char s[] = "holas";
+	char d[] = "hello";
+	char d2[] = "hello";
+	size_t n = 6;
 
 	printf("\n antes de copiar mia %s",d);
 	ft_memmove(d,s,n);
